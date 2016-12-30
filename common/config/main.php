@@ -8,6 +8,13 @@ return [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
+        'formatter' => [
+            'dateFormat' => 'Y-m-d',
+            'datetimeFormat' => 'Y-m-d H:i:s',
+            'timeFormat' => 'H:i:s',
+            'locale' => 'zh-CN', //your language locale
+            'defaultTimeZone' => 'Asia/Shanghai', // time zone
+        ],
     ],
 
 ];
