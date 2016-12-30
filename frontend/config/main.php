@@ -35,6 +35,12 @@ return [
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
+//            'error_types' => [
+//                'class' => 'app\web\ErrorHandler',
+//                'fatal' => true,
+//                'catchable' => YII_DEBUG ? (E_ALL | E_STRICT) : false
+//            ],
+//            'display_errors' => ini_get('display_errors')
         ],
         /*
         'urlManager' => [

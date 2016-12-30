@@ -4,6 +4,7 @@ use yii\grid\GridView;
 use common\models\Card;
 use common\models\RefApp;
 use yii\helpers\ArrayHelper;
+use yii\helpers\Url ;
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\CardSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -63,7 +64,42 @@ $refapp_arr =ArrayHelper::map(RefApp::find()->all(), 'id', 'appname') ;
             // 'bind_at',
             // 'bind_uid',
 
-            ['class' => 'yii\grid\ActionColumn'],
+//            ['class' => 'yii\grid\ActionColumn'],
+
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'urlCreator' => function( $action, $model, $key, $index ){
+                    if ($action == "view") {
+                        return Url::to(['ref-user', 'cid' => $key]);
+                    }
+                },
+//                'buttons' => [
+//                    'view' => function ($url, $model) {
+//                        return Html::a('<span class="glyphicon glyphicon-eye-open"></span>', $url , ['class' => 'view', 'data-pjax' => '0']);
+//                    },
+//                ],
+                'template' => '{view}',
+            ]
+
         ],
-    ]); ?>
+    ]);
+//    $this->registerJs(
+//        "$(document).on('ready pjax:success', function() {  // 'pjax:success' use if you have used pjax
+//    $('.view').click(function(e){
+//       e.preventDefault();
+//       $('#pModal').modal('show')
+//                  .find('.modal-content')
+//                  .load($(this).attr('href'));
+//   });
+//});
+//");
+
+//    yii\bootstrap\Modal::begin([
+//        'header'=>'<h4>Job Created</h4>',
+//        'id'=>'pModal',
+//        'size'=>'modal-lg',
+//    ]);
+//    yii\bootstrap\Modal::end();
+
+    ?>
 </div>

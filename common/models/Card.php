@@ -10,11 +10,11 @@ use yii\behaviors\TimestampBehavior;
  * @property integer $refapp
  * @property integer $status
  * @property integer $period
- * @property integer $price
  * @property integer $created_at
  * @property integer $updated_at
  * @property integer $bind_at
  * @property integer $bind_uid
+ * @property integer $whoissue
  */
 class Card extends \yii\db\ActiveRecord
 {
@@ -39,7 +39,7 @@ class Card extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['refapp', 'status', 'period', 'price', 'created_at', 'updated_at', 'bind_at', 'bind_uid'], 'integer'],
+            [['refapp', 'status', 'period',  'created_at', 'updated_at', 'bind_at', 'bind_uid','whoissue'], 'integer'],
             ['status', 'default', 'value' => self::STATUS_CREATED],
             ['status', 'in', 'range' => [self::STATUS_CREATED, self::STATUS_USED]],
             [['sn'], 'string', 'max' => 255],
@@ -58,7 +58,6 @@ class Card extends \yii\db\ActiveRecord
             'refapp' => '参照系统',
             'status' => '状态',
             'period' => '时长',
-            'price' => '价格',
             'created_at' => '创建于',
             'updated_at' => 'Updated At',
             'bind_at' => '使用于',

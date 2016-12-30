@@ -38,7 +38,7 @@ AppAsset::register($this);
         ['label' => '首页', 'url' => ['/site/index']],
         ['label' => '卡管理', 'url' => ['/card/index']],
         ['label' => '在线制卡', 'url' => ['/site/about']],
-        ['label' => '绑定用户', 'url' => ['/site/about']],
+//        ['label' => '绑定用户', 'url' => ['/site/about']],
 
 //        ['label' => 'About', 'url' => ['/site/about']],
 //        ['label' => 'Contact', 'url' => ['/site/contact']],

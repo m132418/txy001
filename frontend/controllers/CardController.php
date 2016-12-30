@@ -1,14 +1,14 @@
 <?php
-
 namespace frontend\controllers;
-
+use common\services\DBService;
 use Yii;
 use common\models\Card;
 use common\models\CardSearch;
+use yii\base\Exception;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
+use common\models\UserInfoSearch;
 /**
  * CardController implements the CRUD actions for Card model.
  */
@@ -120,5 +120,39 @@ class CardController extends Controller
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
+    }
+    public function actionRefUser($cid)
+    {
+
+        $searchModel = new UserInfoSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('userlist', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+    public function actionBindUser($cid ,$key)
+    {
+//       var_dump($cid) ;// card id
+//        var_dump($key) ;// user id ;
+      //1  update card bind user
+        $card = Card::findOne(['id'=>$cid]) ;
+//        var_dump($card) ;
+        $card->bind_uid =trim($key)  ;
+        $card->bind_at = time() ;
+        if ($card->status ==Card::STATUS_USED )
+        {
+            throw new Exception("卡已经用过了") ;
+        }
+        $card->status = Card::STATUS_USED ;
+//        $card->whoissue = Yii::$app->user->identity->getId();
+        $card->save(false) ;
+        // 2 postpone user due to date time
+$sql =        DBService::build_postpone_sql($card->period,$key) ;
+        DBService::q_with_native_sql($sql)->execute() ;
+
+        // redirect to card detail
+        return $this->redirect(['view', 'id' => $cid]);
     }
 }

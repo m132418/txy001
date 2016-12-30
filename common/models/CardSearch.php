@@ -18,7 +18,7 @@ class CardSearch extends Card
     public function rules()
     {
         return [
-            [['id', 'refapp', 'status', 'period', 'price', 'created_at', 'updated_at', 'bind_at', 'bind_uid'], 'integer'],
+            [['id', 'refapp', 'status', 'period',  'created_at', 'updated_at', 'bind_at', 'bind_uid'], 'integer'],
             [['sn'], 'safe'],
         ];
     }
@@ -63,7 +63,7 @@ class CardSearch extends Card
             'refapp' => $this->refapp,
             'status' => $this->status,
             'period' => $this->period,
-            'price' => $this->price,
+//            'price' => $this->price,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
             'bind_at' => $this->bind_at,

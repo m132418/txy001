@@ -33,10 +33,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'refapp',
             'status',
             'period',
-            'price',
-            'created_at',
-            'updated_at',
-            'bind_at',
+//            'price',
+            'created_at:datetime',
+
+//            'updated_at',
+            'bind_at:datetime',
+
             'bind_uid',
         ],
     ]) ?>

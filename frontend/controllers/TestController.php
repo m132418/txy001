@@ -83,7 +83,7 @@ class TestController extends Controller
     }
     public function actionT2()
     {
-        echo 45;
+        var_dump($_GET) ;
     }
     /**
      * Logs in a user.
