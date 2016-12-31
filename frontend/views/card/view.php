@@ -9,6 +9,7 @@ use yii\widgets\DetailView;
 $this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Cards', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+//$var = User::findOne(['id'=>]);
 ?>
 <div class="card-view">
 
@@ -30,16 +31,33 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'sn',
-            'refapp',
-            'status',
-            'period',
+//            'refapp',
+            [                      // the owner name of the model
+                'label' => '参照系统',
+                'value' => $model->ref_app->appname,
+            ],
+//            'status',
+            [                      // the owner name of the model
+                'label' => '参照系统',
+                'value' => $model->status == 1 ? "未使用":"已使用",
+            ],
+//            'period',
+            [                      // the owner name of the model
+                'label' => '卡时长类型',
+                'value' => $model->periodlable ,
+            ],
 //            'price',
             'created_at:datetime',
 
 //            'updated_at',
             'bind_at:datetime',
 
-            'bind_uid',
+//            'bind_uid',
+            [                      // the owner name of the model
+                'label' => '使用用户',
+                'value' => $model->user_info->user_name,
+            ],
+
         ],
     ]) ?>
 

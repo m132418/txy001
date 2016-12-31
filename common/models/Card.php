@@ -1,7 +1,9 @@
 <?php
 namespace common\models;
+
 use Yii;
 use yii\behaviors\TimestampBehavior;
+
 /**
  * This is the model class for table "card".
  *
@@ -20,6 +22,7 @@ class Card extends \yii\db\ActiveRecord
 {
     const STATUS_CREATED = 1;
     const STATUS_USED = 2;
+
     /**
      * @inheritdoc
      */
@@ -27,23 +30,25 @@ class Card extends \yii\db\ActiveRecord
     {
         return 'card';
     }
+
     public function behaviors()
     {
         return [
             TimestampBehavior::className(),
         ];
     }
+
     /**
      * @inheritdoc
      */
     public function rules()
     {
         return [
-            [['refapp', 'status', 'period',  'created_at', 'updated_at', 'bind_at', 'bind_uid','whoissue'], 'integer'],
+            [['refapp', 'status', 'period', 'created_at', 'updated_at', 'bind_at', 'bind_uid', 'whoissue'], 'integer'],
             ['status', 'default', 'value' => self::STATUS_CREATED],
             ['status', 'in', 'range' => [self::STATUS_CREATED, self::STATUS_USED]],
             [['sn'], 'string', 'max' => 255],
-            ['refapp','check_in_range']
+            ['refapp', 'check_in_range']
         ];
     }
 
@@ -78,11 +83,12 @@ class Card extends \yii\db\ActiveRecord
             return $data;
         }
     }
+
     public static function ref_period_lebels($id = null)
     {
         $data = [
-            1 => "年",            2 => "半年",
-            3 => "季",            4 => "月",
+            1 => "年", 2 => "半年",
+            3 => "季", 4 => "月",5 => "日"
         ];
 
         if ($id !== null && isset($data[$id])) {
@@ -91,12 +97,27 @@ class Card extends \yii\db\ActiveRecord
             return $data;
         }
     }
-    public function check_in_range($attribute,$params){
+    public function getPeriodlable()
+    {
+     return   static::ref_period_lebels($this->period) ;
+    }
 
-      $ref =  RefApp::findOne(['id'=>$this->refapp]) ;
+    public function check_in_range($attribute, $params)
+    {
 
-        if(!$ref ){
+        $ref = RefApp::findOne(['id' => $this->refapp]);
+
+        if (!$ref) {
             $this->addError($attribute, '参照系统超出范围了');
         }
+    }
+
+    public function getUser_info()
+    {
+     return   UserInfo::findOne(['id'=>$this->bind_uid]) ;
+    }
+    public function getRef_app()
+    {
+        return   RefApp::findOne(['id'=>$this->refapp]) ;
     }
 }

@@ -20,7 +20,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'period')->textInput() ?>
 
-    <?= $form->field($model, 'price')->textInput() ?>
+
 
     <?= $form->field($model, 'created_at')->textInput() ?>
 

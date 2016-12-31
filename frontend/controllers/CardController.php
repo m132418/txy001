@@ -1,6 +1,8 @@
 <?php
 namespace frontend\controllers;
+use common\models\UserInfo;
 use common\services\DBService;
+use frontend\models\BindUserInputForm;
 use Yii;
 use common\models\Card;
 use common\models\CardSearch;
@@ -120,6 +122,65 @@ class CardController extends Controller
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
+    }
+    public function actionBindUserInput($cid)
+    {
+        $this->layout = "simple" ;
+
+        if (Yii::$app->user->isGuest) {
+            return $this->goHome();
+        }
+
+        $card = Card::findOne(['id'=>$cid]) ;
+        if (!$card)
+        return $this->render('bind-user-input-report', [
+            'msg' => "卡没找到",
+        ]);
+        if ($card->status ==Card::STATUS_USED )
+        {
+            return $this->render('bind-user-input-report', [
+                'msg' => "卡已经用过了",
+            ]);
+        }
+
+
+        $model = new BindUserInputForm();
+        $model->cardsn = $card->sn ;
+        if ($model->load(Yii::$app->request->post()) ) {
+            $this->layout = "main" ;
+//            $user = User::findIdentity(Yii::$app->user->identity->id) ;
+            $u = UserInfo::findOne(['user_name'=>$model->username]) ;
+
+            if (!$u)
+            {
+
+                return $this->render('bind-user-input-report', [
+                    'msg' => "对应用户没找到",
+                ]);
+            }
+
+
+
+            $card->bind_uid =trim($u->id)  ;
+            $card->bind_at = time() ;
+            $card->status = Card::STATUS_USED ;
+//        $card->whoissue = Yii::$app->user->identity->getId();
+            $card->save(false) ;
+
+            $sql =        DBService::build_postpone_sql($card->period,$u->id) ;
+            DBService::q_with_native_sql($sql)->execute() ;
+
+            $msg = "充进去了" ;
+
+            return $this->render('bind-user-input-report', [
+                'msg' => $msg,
+            ]);
+        } else {
+            return $this->render('bind-user-input', [
+                'model' => $model,
+            ]);
+        }
+
     }
     public function actionRefUser($cid)
     {

@@ -53,13 +53,15 @@ class DBService
     {
         switch ($period_type){
             case 1:
-                return "UPDATE user_info SET expire_time = DATE_ADD(expire_time,INTERVAL 1 YEAR) WHERE id = " . $id;
+                return "UPDATE user_info SET vip = 1 ,expire_time = DATE_ADD(expire_time,INTERVAL 1 YEAR) WHERE id = " . $id;
             case 2:
-                return "UPDATE user_info SET expire_time = DATE_ADD(expire_time,INTERVAL 0.5 YEAR) WHERE id = " . $id;
+                return "UPDATE user_info SET vip = 1 ,expire_time = DATE_ADD(expire_time,INTERVAL 0.5 YEAR) WHERE id = " . $id;
             case 3:
-                return "UPDATE user_info SET expire_time = DATE_ADD(expire_time,INTERVAL 0.25 YEAR) WHERE id = " . $id;
+                return "UPDATE user_info SET vip = 1 ,expire_time = DATE_ADD(expire_time,INTERVAL 0.25 YEAR) WHERE id = " . $id;
             case 4:
-                return "UPDATE user_info SET expire_time = DATE_ADD(expire_time,INTERVAL 1 MONTH) WHERE id = " . $id;
+                return "UPDATE user_info SET vip = 1 ,expire_time = DATE_ADD(expire_time,INTERVAL 1 MONTH) WHERE id = " . $id;
+            case 5:
+                return "UPDATE user_info SET vip = 1 ,expire_time = DATE_ADD(expire_time,INTERVAL 1 DAY) WHERE id = " . $id;
         }
     }
 }

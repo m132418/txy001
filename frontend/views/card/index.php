@@ -70,36 +70,36 @@ $refapp_arr =ArrayHelper::map(RefApp::find()->all(), 'id', 'appname') ;
                 'class' => 'yii\grid\ActionColumn',
                 'urlCreator' => function( $action, $model, $key, $index ){
                     if ($action == "view") {
-                        return Url::to(['ref-user', 'cid' => $key]);
+                        return Url::to(['bind-user-input', 'cid' => $key]);
                     }
                 },
-//                'buttons' => [
-//                    'view' => function ($url, $model) {
-//                        return Html::a('<span class="glyphicon glyphicon-eye-open"></span>', $url , ['class' => 'view', 'data-pjax' => '0']);
-//                    },
-//                ],
+                'buttons' => [
+                    'view' => function ($url, $model) {
+                        return Html::a('<span class="glyphicon glyphicon-eye-open"></span>', $url , ['class' => 'view', 'data-pjax' => '0']);
+                    },
+                ],
                 'template' => '{view}',
             ]
 
         ],
     ]);
-//    $this->registerJs(
-//        "$(document).on('ready pjax:success', function() {  // 'pjax:success' use if you have used pjax
-//    $('.view').click(function(e){
-//       e.preventDefault();
-//       $('#pModal').modal('show')
-//                  .find('.modal-content')
-//                  .load($(this).attr('href'));
-//   });
-//});
-//");
+    $this->registerJs(
+        "$(document).on('ready pjax:success', function() {  // 'pjax:success' use if you have used pjax
+    $('.view').click(function(e){
+       e.preventDefault();
+       $('#pModal').modal('show')
+                  .find('.modal-content')
+                  .load($(this).attr('href'));
+   });
+});
+");
 
-//    yii\bootstrap\Modal::begin([
-//        'header'=>'<h4>Job Created</h4>',
-//        'id'=>'pModal',
+    yii\bootstrap\Modal::begin([
+        'header'=>'<h4>卡注入用户</h4>',
+        'id'=>'pModal',
 //        'size'=>'modal-lg',
-//    ]);
-//    yii\bootstrap\Modal::end();
+    ]);
+    yii\bootstrap\Modal::end();
 
     ?>
 </div>
