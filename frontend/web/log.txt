@@ -1,0 +1,222 @@
+1
+1
+'SELECT IFNULL(SUM(value),0) FROM score where bindto =3'
+'SELECT set_point FROM ref_agents where id = 2'
+'0'
+'300'
+1
+1
+'SELECT IFNULL(SUM(value),0) FROM score where bindto =3'
+'SELECT set_point FROM ref_agents where id = 2'
+'0'
+'300'
+1
+1
+'SELECT IFNULL(SUM(value),0) FROM score where bindto =3'
+'SELECT set_point FROM ref_agents where id = 2'
+'0'
+'300'
+1
+1
+'SELECT IFNULL(SUM(value),0) FROM score where bindto =3'
+'SELECT set_point FROM ref_agents where id = 2'
+'0'
+'300'
+1
+1
+'SELECT IFNULL(SUM(value),0) FROM score where bindto =3'
+'SELECT set_point FROM ref_agents where id = 2'
+'0'
+'300'
+1
+1
+'SELECT IFNULL(SUM(value),0) FROM score where bindto =6'
+'SELECT set_point FROM ref_agents where id = 2'
+'0'
+'300'
+1
+1
+'SELECT IFNULL(SUM(value),0) FROM score where bindto =6'
+'SELECT set_point FROM ref_agents where id = 2'
+'0'
+'300'
+1
+1
+'SELECT IFNULL(SUM(value),0) FROM score where bindto =6'
+'SELECT set_point FROM ref_agents where id = 2'
+'0'
+'300'
+1
+1
+'SELECT IFNULL(SUM(value),0) FROM score where bindto =6'
+'SELECT set_point FROM ref_agents where id = 2'
+'0'
+'300'
+1
+1
+'SELECT IFNULL(SUM(value),0) FROM score where bindto =6'
+'SELECT set_point FROM ref_agents where id = 2'
+'0'
+'300'
+1
+1
+'SELECT IFNULL(SUM(value),0) FROM score where bindto =6'
+'SELECT set_point FROM ref_agents where id = 2'
+'0'
+'300'
+1
+1
+'SELECT IFNULL(SUM(value),0) FROM score where bindto =6'
+'SELECT set_point FROM ref_agents where id = 2'
+'0'
+'300'
+1
+1
+'SELECT IFNULL(SUM(value),0) FROM score where bindto =6'
+'SELECT set_point FROM ref_agents where id = 2'
+'0'
+'300'
+1
+1
+'SELECT IFNULL(SUM(value),0) FROM score where bindto =6'
+'SELECT set_point FROM ref_agents where id = 2'
+'0'
+'300'
+1
+1
+'SELECT IFNULL(SUM(value),0) FROM score where bindto =6'
+'SELECT set_point FROM ref_agents where id = 2'
+'0'
+'300'
+1
+1
+'SELECT IFNULL(SUM(value),0) FROM score where bindto =6'
+'SELECT set_point FROM ref_agents where id = 2'
+'0'
+'300'
+1
+1
+'SELECT IFNULL(SUM(value),0) FROM score where bindto =6'
+'SELECT set_point FROM ref_agents where id = 2'
+'0'
+'300'
+1
+1
+'SELECT IFNULL(SUM(value),0) FROM score where bindto =6'
+'SELECT set_point FROM ref_agents where id = 2'
+'0'
+'300'
+1
+2
+'SELECT IFNULL(SUM(value),0) FROM score where bindto =1'
+'SELECT set_point FROM ref_agents where id = 3'
+'404000'
+'500000'
+1
+2
+'SELECT IFNULL(SUM(value),0) FROM score where bindto =1'
+'SELECT set_point FROM ref_agents where id = 3'
+'404000'
+'500000'
+1
+2
+'SELECT IFNULL(SUM(value),0) FROM score where bindto =1'
+'SELECT set_point FROM ref_agents where id = 3'
+'404000'
+'500000'
+1
+2
+'SELECT IFNULL(SUM(value),0) FROM score where bindto =1'
+'SELECT set_point FROM ref_agents where id = 3'
+'404000'
+'500000'
+1
+2
+'SELECT IFNULL(SUM(value),0) FROM score where bindto =1'
+'SELECT set_point FROM ref_agents where id = 3'
+'404000'
+'500000'
+1
+2
+'SELECT IFNULL(SUM(value),0) FROM score where bindto =1'
+'SELECT set_point FROM ref_agents where id = 3'
+'404000'
+'500000'
+1
+2
+'SELECT IFNULL(SUM(value),0) FROM score where bindto =1'
+'SELECT set_point FROM ref_agents where id = 3'
+'404000'
+'500000'
+1
+2
+'SELECT IFNULL(SUM(value),0) FROM score where bindto =1'
+'SELECT set_point FROM ref_agents where id = 3'
+'404000'
+'500000'
+1
+2
+'SELECT IFNULL(SUM(value),0) FROM score where bindto =1'
+'SELECT set_point FROM ref_agents where id = 3'
+'404000'
+'500000'
+1
+2
+'SELECT IFNULL(SUM(value),0) FROM score where bindto =1'
+'SELECT set_point FROM ref_agents where id = 3'
+'404000'
+'500000'
+1
+2
+'SELECT IFNULL(SUM(value),0) FROM score where bindto =1'
+'SELECT set_point FROM ref_agents where id = 3'
+'404000'
+'500000'
+1
+2
+'SELECT IFNULL(SUM(value),0) FROM score where bindto =1'
+'SELECT set_point FROM ref_agents where id = 3'
+'404000'
+'500000'
+1
+2
+'SELECT IFNULL(SUM(value),0) FROM score where bindto =1'
+'SELECT set_point FROM ref_agents where id = 3'
+'404000'
+'500000'
+1
+2
+'SELECT IFNULL(SUM(value),0) FROM score where bindto =1'
+'SELECT set_point FROM ref_agents where id = 3'
+'404000'
+'500000'
+1
+2
+'SELECT IFNULL(SUM(value),0) FROM score where bindto =1'
+'SELECT set_point FROM ref_agents where id = 3'
+'404000'
+'500000'
+1
+2
+'SELECT IFNULL(SUM(value),0) FROM score where bindto =1'
+'SELECT set_point FROM ref_agents where id = 3'
+'404000'
+'500000'
+1
+2
+'SELECT IFNULL(SUM(value),0) FROM score where bindto =1'
+'SELECT set_point FROM ref_agents where id = 3'
+'404000'
+'500000'
+1
+2
+'SELECT IFNULL(SUM(value),0) FROM score where bindto =1'
+'SELECT set_point FROM ref_agents where id = 3'
+'404000'
+'500000'
+1
+2
+'SELECT IFNULL(SUM(value),0) FROM score where bindto =1'
+'SELECT set_point FROM ref_agents where id = 3'
+'404000'
+'500000'
